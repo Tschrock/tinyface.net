@@ -3,10 +3,6 @@ body {
     color: #fff;
 }
 
-p {
-    font-size: 1.2em;
-}
-
 header, footer {
     text-align: center;
     background-color: #547c99;
@@ -33,14 +29,6 @@ header h1 {
     font-size: 4em;
 }
 
-header h1 small {
-    color: #bbb;
-}
-
-header h3 {
-    color: #fff;
-}
-
 .feziconcontainer {
     border-radius: 50%;
     width: 117px;
@@ -50,16 +38,6 @@ header h3 {
     border: 5px solid #1d2a34;
     margin: auto;
 }
-
-h2 {
-    margin-top: 1.5em;
-}
-
-/* .content {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    text-align: center;
-} */
 
 .tinytext {
     display: inline-block;
@@ -72,4 +50,25 @@ hr {
 
 .img-bordered {
     border: 2px solid white;
+}
+
+.emotelist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.emote {
+    padding: 0.25em;
+    margin: 0.25em;
+    width: 7em;
+    height: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.emoteimage {
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+    margin-bottom: 0.5em;
 }
