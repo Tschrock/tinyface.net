@@ -18,10 +18,14 @@ jobs:
         with:
           filename: 'ponymotes.zip'
           directory: 'img/emotes'
+      - name: Set Release Tag
+        id: tagname
+        run: echo "::set-output name=tagname::$(date +'emotes-%Y-%m-%d_%H-%M-%S')"
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          name: ${{ github.sha }}
+          name: ${{ steps.tagname.outputs.tagname }}
+          tag_name: ${{ steps.tagname.outputs.tagname }}
           files: ponymotes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
