@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
     - 'img/emotes/**'
+  workflow_dispatch:
 
 jobs:
   bundle:
