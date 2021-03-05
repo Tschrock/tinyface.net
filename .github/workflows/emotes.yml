@@ -1,0 +1,26 @@
+name: Bundle Emotes
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+    - 'img/emotes/**'
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Zip Emotes
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'ponymotes.zip'
+          directory: 'img/emotes'
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ github.sha }}
+          files: ponymotes.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
