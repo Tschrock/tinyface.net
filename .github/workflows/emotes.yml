@@ -16,16 +16,16 @@ jobs:
       - name: Zip Emotes
         uses: thedoctor0/zip-release@master
         with:
-          filename: 'ponymotes.zip'
+          filename: 'tinymotes.zip'
           directory: 'img/emotes'
       - name: Set Release Tag
         id: tagname
-        run: echo "::set-output name=tagname::$(date +'emotes-%Y-%m-%d_%H-%M-%S')"
+        run: echo "::set-output name=tagname::$(date +'tinymotes-%Y-%m-%d_%H-%M-%S')"
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
           name: ${{ steps.tagname.outputs.tagname }}
           tag_name: ${{ steps.tagname.outputs.tagname }}
-          files: img/emotes/ponymotes.zip
+          files: img/emotes/tinymotes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
