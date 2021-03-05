@@ -26,6 +26,6 @@ jobs:
         with:
           name: ${{ steps.tagname.outputs.tagname }}
           tag_name: ${{ steps.tagname.outputs.tagname }}
-          files: ponymotes.zip
+          files: img/emotes/ponymotes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
